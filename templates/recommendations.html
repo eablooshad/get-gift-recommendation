@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Recommended Toys</h1>
+
+<div>
+{% for toy in toys %}
+    <div class="toy-item">
+        <img src="{{ url_for('static', filename='img/' + toy['Product_id']|string + '.jpg') }}" alt="{{ toy['Product Name'] }}">
+        <h3>{{ toy['Product Name'] }}</h3>
+        <p>{{ toy['Description'] }}</p>
+    </div>
+{% endfor %}
+
+</div>
+
+<a href="/">Back to Category Selection</a>
+
+{% endblock %}

@@ -3,5 +3,15 @@
 {% block content %}
   <h1>Welcome to the Gift Recommendation App</h1>
   <p>Explore and find the perfect Gift for your loved one!</p>
-  <button>Explore Categories</button>
+  <h2>Select Categories</h2>
+<form action="/recommend" method="POST">
+    {% for category in categories %}
+        <label>
+            <input type="checkbox" name="categories" value="{{ category }}">
+            {{ category }}
+        </label><br>
+    {% endfor %}
+    <button type="submit">Show Recommendations</button>
+</form>
+
 {% endblock %}

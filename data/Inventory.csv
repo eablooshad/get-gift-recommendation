@@ -1,0 +1,4 @@
+Product_id,Product Name,Category,Price,Min Age,Max Age,Description,Keywords,Rating,Stock Quantity,Image URL
+1,Plush Bear,"Plushies, Stuffed Toys",15,3,7,Soft bear for snuggling and comfort.,"soft, snuggly",4.5,10,static/img/1.jpg
+2,Wooden Building Blocks,"Building Toys, Wooden",25,2,5,Durable blocks to build creativity.,"wooden, blocks",4.8,5,static/img/2.jpg
+3,Science Kit,"Educational, STEM Toys",35,8,12,Hands-on science experiments,"science, learning",4.6,8,static/img/3.jpg
