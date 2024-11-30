@@ -1,17 +1,25 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <h1>Welcome to the Gift Recommendation App</h1>
-  <p>Explore and find the perfect Gift for your loved one!</p>
-  <h2>Select Categories</h2>
-<form action="/recommend" method="POST">
-    {% for category in categories %}
-        <label>
-            <input type="checkbox" name="categories" value="{{ category }}">
-            {{ category }}
-        </label><br>
-    {% endfor %}
-    <button type="submit">Show Recommendations</button>
-</form>
+<div>
+    <h1 class="header">Get A Toy Recommendation</h1>
+</div>
+<div class="main-section">
+    <p>Explore and find the perfect Gift for your loved one!</p>
+    <h2>Select Categories</h2>
+</div>
+<div class="container">    
+    <form action="/recommend" method="POST">
+        <div class="categories">
+            {% for category in categories %}
+            <label class="category-btn-label">
+                <input type="checkbox" name="categories" value="{{ category }}" class="category-checkbox">
+                <span class="category-btn">{{ category }}</span>
+            </label>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn-showRec">Show Recommendations</button>
+    </form>
+</div>
 
 {% endblock %}

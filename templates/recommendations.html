@@ -1,19 +1,24 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Recommended Toys</h1>
+<h1 class="header">Recommended Toys</h1>
 
 <div>
-{% for toy in toys %}
-    <div class="toy-item">
-        <img src="{{ url_for('static', filename='img/' + toy['Product_id']|string + '.jpg') }}" alt="{{ toy['Product Name'] }}">
-        <h3>{{ toy['Product Name'] }}</h3>
-        <p>{{ toy['Description'] }}</p>
-    </div>
-{% endfor %}
+<div class="toy-grid container">
+    {% for toy in toys %}
+        <div class="toy-card">
+            <img src="{{ url_for('static', filename='img/' + toy['Product ID']|string + '.jpg') }}" alt="{{ toy['Product Name'] }}">
+            <!-- <p>Image URL: {{ url_for('static', filename='img/' + toy['Product ID'] + '.jpg') }}</p> -->
+            <h3>{{ toy['Product Name'] }}</h3>
+            <p>{{ toy['Description'] }}</p>
+            <p>Price: {{ toy['Price'] }}</p>
+            <button class=" toy-card btn"><a href="{{ toy['URL'] }}">Get It Now</a><button>
+        </div>
+    {% endfor %}
+</div>
 
 </div>
 
-<a href="/">Back to Category Selection</a>
+<a href="/" class="btn-showRec">Back to Category Selection</a>
 
 {% endblock %}
